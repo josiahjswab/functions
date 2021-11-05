@@ -61,7 +61,7 @@ function SortAndCompare() {
 
     return (
         <div id="container_sort_compare">
-            <div>
+            <div className='flex-column'>
                 <textarea rows="20" type="textbox" value={_listA} onChange={(e) => setListA(e.target.value)} placeholder="List A..." />
                 <h2>{resultA}</h2>
                 <ol>
@@ -71,7 +71,7 @@ function SortAndCompare() {
                 </ol>
             </div>
             <button onClick={thisFoo} >Execute</button>
-            <div>
+            <div className='flex-column'>
                 <textarea rows="20" type="textbox" value={_listB} onChange={(e) => setListB(e.target.value)} placeholder="List B..." />
                 <h2>{resultB}</h2>
                 <ol>
