@@ -3,6 +3,8 @@ textarea {
 }
 #container_sort_compare {
     padding-top: 50px;
+    max-width: 1080px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
