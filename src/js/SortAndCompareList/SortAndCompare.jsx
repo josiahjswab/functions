@@ -4,8 +4,8 @@ import { utilityForEachLi, formatListIntoArray } from '../common';
 // import { dbList } from './dbList.js'
 
 function SortAndCompare() {
-    const [_listA, set_listA] = useState();
-    const [_listB, set_listB] = useState();
+    const [_listA, set_listA] = useState("");
+    const [_listB, set_listB] = useState("");
 
     let listA = formatListIntoArray(_listA);
     let listB = formatListIntoArray(_listB);
