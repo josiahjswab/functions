@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { utilityForEachLi, formatListIntoArray } from '../common';
 import './sortAndCompare.css';
 
-function SortAndCompare() {
+function SortAndCompare(props) {
     const [_listA, setListA] = useState(`
     "A1000"
     " Batman"
@@ -31,7 +31,9 @@ function SortAndCompare() {
     const [countAB, setCountAB] = useState([0, 0]);
     const [resultA, setResultA] = useState("");
     const [resultB, setResultB] = useState("");
-    
+    const { showModal } = props;
+    console.log(showModal);
+
     function thisFoo() {
         setDbIsMissing([]);
         setTestIsMissing([]);
@@ -55,8 +57,10 @@ function SortAndCompare() {
     }
     
     useEffect(() => {
-        setResultA(`List A: ${dbIsMissing.length} out of ${countAB[0]} are not in the other list.`);
-        setResultB(`List B: ${testIsMissing.length} out of ${countAB[1]} are not in the other list.`);
+        if (!showModal) {
+            setResultA(`List A: ${dbIsMissing.length} out of ${countAB[0]} are not in the other list.`);
+            setResultB(`List B: ${testIsMissing.length} out of ${countAB[1]} are not in the other list.`);
+        }
     }, [dbIsMissing]);
 
     return (
