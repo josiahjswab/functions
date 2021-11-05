@@ -1,0 +1,8 @@
+textarea {
+    width: 200px;
+}
+#container_sort_compare {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
