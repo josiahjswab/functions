@@ -32,7 +32,6 @@ function SortAndCompare(props) {
     const [resultA, setResultA] = useState("");
     const [resultB, setResultB] = useState("");
     const { showModal } = props;
-    console.log(showModal);
 
     function thisFoo() {
         setDbIsMissing([]);
