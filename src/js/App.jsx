@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
-import SortAndCompare from './SortAndCompareList/SortAndCompare';
+import SortAndCompare from './SortAndCompareList';
+import AuthorAdaptiveCard from './AuthorAdaptiveCard';
 import './styles.css';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
             
             {/* <p>It took 2 hours to get the results of my first comparision of two lists of 30 values. In 5 more minutes I compared about 800 more list items. Doing that manually would be very hard to keep track off.</p> */}
             <SortAndCompare showModal={showModal}/>
+            <AuthorAdaptiveCard/>
         </div>
     )
 }

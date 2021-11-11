@@ -1,0 +1,246 @@
+{
+ "type": "message",
+ "attachments": [
+  {
+   "contentType": "application/vnd.microsoft.card.adaptive",
+   "contentUrl": null,
+   "content": {
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.4",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "ES Automation Test Results",
+          "size": "Large",
+          "wrap": true,
+          "horizontalAlignment": "Left",
+          "height": "stretch",
+          "spacing": "None",
+          "isSubtle": false,
+          "color": "Dark",
+          "weight": "Default",
+          "style": "heading",
+          "fontType": "Default"
+         },
+         {
+          "type": "TextBlock",
+          "text": "2021-11-09T21:51:24.522Z",
+          "wrap": true
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+         {
+          "type": "ActionSet",
+          "actions": [
+           {
+            "type": "Action.OpenUrl",
+            "title": "Goes 2 Google",
+            "url": "https://www.google.com"
+           }
+          ],
+          "height": "stretch"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "items": [
+       {
+        "type": "Container",
+        "items": [
+         {
+          "type": "ColumnSet",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "FactSet",
+              "facts": [
+               {
+                "title": "Config",
+                "value": "SWET_AUTOMATION"
+               },
+               {
+                "title": "VirtualMachine",
+                "value": "Success"
+               },
+               {
+                "title": "ES Install",
+                "value": "Success"
+               },
+               {
+                "title": "Test Categories",
+                "value": "BA, SSB, CCEWEB"
+               },
+               {
+                "title": "Test Results",
+                "value": "Failed"
+               }
+              ]
+             },
+             {
+              "type": "ColumnSet",
+              "columns": [
+               {
+                "type": "Column",
+                "width": "auto",
+                "items": [
+                 {
+                  "type": "TextBlock",
+                  "text": "751",
+                  "wrap": true,
+                  "color": "Warning",
+                  "weight": "Bolder",
+                  "size": "ExtraLarge",
+                  "horizontalAlignment": "Left"
+                 }
+                ]
+               },
+               {
+                "type": "Column",
+                "width": "auto",
+                "items": [
+                 {
+                  "type": "TextBlock",
+                  "text": "of",
+                  "wrap": true,
+                  "horizontalAlignment": "Center",
+                  "color": "Accent",
+                  "size": "ExtraLarge",
+                  "weight": "Bolder"
+                 }
+                ]
+               },
+               {
+                "type": "Column",
+                "width": "stretch",
+                "items": [
+                 {
+                  "type": "TextBlock",
+                  "text": "\n859 passed",
+                  "wrap": true,
+                  "size": "ExtraLarge",
+                  "weight": "Bolder",
+                  "color": "Accent",
+                  "spacing": "None",
+                  "horizontalAlignment": "Left"
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "auto"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "items": [
+       {
+        "type": "TextBlock",
+        "text": "_____________________",
+        "wrap": true
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "items": [
+       {
+        "type": "ActionSet",
+        "actions": [
+         {
+          "type": "Action.ShowCard",
+          "title": "BA - 97/103",
+          "card": {
+           "type": "AdaptiveCard",
+           "body": [
+            {
+             "type": "Container",
+             "items": [
+              {
+               "type": "ActionSet",
+               "actions": [
+                {
+                 "type": "Action.ShowCard",
+                 "title": "ST000AAADebugLogin",
+                 "card": {
+                  "type": "AdaptiveCard",
+                  "body": [
+                   {
+                    "type": "Container",
+                    "items": [
+                     {
+                      "type": "TextBlock",
+                      "text": "Stack Trace...",
+                      "wrap": true
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                }
+               ]
+              },
+              {
+               "type": "ActionSet",
+               "actions": [
+                {
+                 "type": "Action.ShowCard",
+                 "title": "ST001AddDispensingSystem",
+                 "card": {
+                  "type": "AdaptiveCard",
+                  "body": [
+                   {
+                    "type": "Container",
+                    "items": [
+                     {
+                      "type": "TextBlock",
+                      "text": "Stack Trace...",
+                      "wrap": true
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}
