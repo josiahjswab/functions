@@ -13,7 +13,8 @@ export default function AuthorAdaptiveCard() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: data,
+            mode: 'no-cors',
+            body: JSON.stringify(data),
         });
     }
 
