@@ -9,7 +9,7 @@ export default function AuthorAdaptiveCard() {
     const [linkTitle, setLinkTitle] = useState('');
     const [message, setMessage] = useState('');
     const [sendTime, setSendTime] = useState(new Date());
-    const [testDB, setTestDB] = useState('');
+    const [testDB, setTestDB] = useState([]);
     
     useEffect(() => {
 
@@ -31,10 +31,25 @@ export default function AuthorAdaptiveCard() {
     }
 
     const clickkk = () => {
-        fetch('/getTM')
-            .then(data => {console.log(data);})
-            .then(results => { setTestDB(results)} )
-            .catch(err => console.log(err));
+        fetch('/TM')
+        .then((res) => res.json())
+        .then(results =>  setTestDB(results))
+        .catch(err => console.log(err));
+
+        console.log('ping');
+
+    }
+
+    const clickkkk = () => {
+        fetch('/TM', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({item: 'Hey this is a new item added by a button!'})
+        })
+        .then((res) => console.log(res))
+        .catch(err => console.log(err));
 
         console.log('ping');
 
@@ -62,9 +77,12 @@ export default function AuthorAdaptiveCard() {
                 <label>Time:</label>
                 <DateTimePicker value={sendTime} onChange={ e => setSendTime(e) } />
             </div> */}
-            <button onClick={clickk}>Send Message</button>
-            <button onClick={clickkk}>Test get</button>
-            {testDB}
+            <button onClick={() => clickk()}>Send Message</button>
+            <button onClick={() => clickkk()}>Test get</button>
+            <button onClick={() => clickkkk()}>Test post</button>
+            {!testDB ? null : testDB.map((i) => {
+                return <p key={i._id}>{i.item}</p>
+            })}
         </div>
     )
 }

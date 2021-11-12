@@ -1,28 +1,24 @@
 const express = require('express')
 const app = express();
 var path = require('path');
-const mongo = require('./mongo-connector');
+const crud = require('./crud');
+const { setupConnection, teardownConnection, createPost } = crud
 const port = 3003
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/getTM', (req, res) => {
-  async function main() {
-    // Use connect method to connect to the server
-    await mongo.client.connect();
-    console.log('Connected successfully to server');
-    const db = mongo.client.db(mongo.dbName);
-    const collection = db.collection('shipwrecks');
-  
-    let boo = await collection.find({latdec: 9.3418808}).toArray();
-    return boo;
-  }
-  main()  
-    .then((data) => res.send(data))
-    .catch(console.error)
-    .finally(() => mongo.client.close())
-  
+app.get('/TM', (req, res) => {
+  setupConnection('TeamsMessages').then(table => {
+    table.find({}).toArray().then(data => res.send(data));
+  });
+})
+
+app.post('/TM', (req, res) => {
+  setupConnection('TeamsMessages').then(table => {
+    
+    table.insertOne(req.body).then(status => res.send(status));
+  });
 })
 
 app.use(express.static('dist'))

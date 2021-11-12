@@ -4,7 +4,7 @@ import AuthorAdaptiveCard from './AuthorAdaptiveCard';
 import './styles.css';
 
 export default function App() {
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div>
