@@ -19,6 +19,7 @@
     "express": "^4.17.1",
     "hjson": "^3.2.2",
     "mongodb": "^4.1.4",
+    "node-cron": "^3.0.0",
     "parcel-bundler": "^1.12.5",
     "react": "^17.0.2",
     "react-datetime-picker": "^3.4.2",
