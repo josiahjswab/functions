@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import DateTimePicker from 'react-datetime-picker';
+// import DateTimePicker from 'react-datetime-picker';
 import populateTemplate from '../../../tm-template';
 // import data from '../../../TestCard.json';
 
@@ -9,6 +9,7 @@ export default function AuthorAdaptiveCard() {
     const [linkTitle, setLinkTitle] = useState('');
     const [message, setMessage] = useState('');
     const [sendTime, setSendTime] = useState(new Date());
+    const [testDB, setTestDB] = useState('');
     
     useEffect(() => {
 
@@ -27,6 +28,16 @@ export default function AuthorAdaptiveCard() {
             mode: 'no-cors',
             body: JSON.stringify(data),
         });
+    }
+
+    const clickkk = () => {
+        fetch('/getTM')
+            .then(data => {console.log(data);})
+            .then(results => { setTestDB(results)} )
+            .catch(err => console.log(err));
+
+        console.log('ping');
+
     }
 
     return (
@@ -52,6 +63,8 @@ export default function AuthorAdaptiveCard() {
                 <DateTimePicker value={sendTime} onChange={ e => setSendTime(e) } />
             </div> */}
             <button onClick={clickk}>Send Message</button>
+            <button onClick={clickkk}>Test get</button>
+            {testDB}
         </div>
     )
 }

@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx parcel build public/index.html",
     "start": "npx parcel public/index.html",
-    "express": "npx parcel build public/index.html && node server/index.js",
+    "watch": "npx parcel watch public/index.html",
+    "express": "node server/index.js",
     "heroku-postbuild": "parcel build public/index.html"
   },
   "author": "",
